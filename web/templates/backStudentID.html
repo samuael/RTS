@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link  rel="stylesheet"  href="{{.HOST}}css/id_style.css" >
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="{{.HOST}}css/bootstrap.min.css" type="text/css">
+    </head>
+    <body>
+        {{ $ds := .}}
+        <div class="row">
+            {{range .Students }}
+            <div class="col-6">
+                {{ template "backpage" $ds }}
+            </div>
+            {{end}}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Aler Template">
+    <meta name="keywords" content="Aler, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Driving</title>
+    <style   type="text/javascript"></style>
+    <script src="{{.HOST}}js/video.js" ></script>
+    <!-- <script src="https://unpkg.com/videojs-flash/dist/videojs-flash.js"></script> --> 
+    <script href="{{.HOST}}js/ie10-viewport-bug-workaround.js" ></script>               
+    <link rel="stylesheet" href="{{.HOST}}css/video-js.css" type="text/css">                  
+    <script src="{{.HOST}}js/videojs-contrib-hls.js"></script>  
+    <script src="{{.HOST}}js/videojs-flash.js"></script>  
+    <script src="{{.HOST}}js/hls.js"  ></script>
+    <script  src="{{.HOST}}js/Playaudio.js" ></script>
+    <!-- Google Font -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="{{.HOST}}css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet"  href="{{.HOST}}css/jquery-ui.min.css" type="text/css">
+    <!-- <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link  href="{{.HOST}}css/audio_fancy.css"  rel="stylesheet" >      
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{{.HOST}}css/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet"  href="{{.HOST}}css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="{{.HOST}}css/style.css" type="text/css">
+    <link rel="stylesheet" href="{{.HOST}}css/learning.css"   type="text/css">
+    <link rel="stylesheet" href="{{.HOST}}css/nice-select.css" type="text/css">
+    <!-- ****************************************** Scripts ****************************************** -->
+    <script>
+        var player = videojs('#example-video');
+        player.play();
+        var containerid = "main-container" ; 
+    </script>
+    <script>
+        function SearchResources(  ){
+            var value = document.getElementById("query").value;
+            console.log("Running me ...... ")
+            $.ajax(
+                {
+                    type :  "GET" , 
+                    dataType : JSON,    
+                    url : Host+"learning/search/" ,
+                    data : {q:value,t:0 } , 
+                    success : function(data ){
+                        console.log(data) ; 
+                    }, 
+                    error : function(e ){
+                        console.log("Error Has Happened .. " , e) ; 
+                    }   
+                }
+            );
+        }
+    </script>
+    <!-- -------------------------- Scripts End ---------------------------------------------------->
+</head>
+<body >
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Wrapper Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <span class="far fa-window-close"></span> 
+        </div>
+        <div class="logo">
+            <a href="./index.html">
+                <img style="border-radius: 50%; border:solid 0.5px #aaaaaa "  src="{{.HOST}}{{.Branch.Logourl}}" alt="">
+            </a>
+            <div class="col-9">
+                <div    style="vertical-align: baseline;">
+                    <h5><strong > {{.Branch.BranchFullnameAmharic}} </strong></h5>
+                    <h6><strong > {{.Branch.BranchFullnameEnglish}} </strong></h6>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="om-widget">
+        <ul>
+                <li><i class="fas fa-code-branch"></i>{{.Branch.ID}}</li>
+                <li>
+                    {{.User }}
+                    <a href="/"><img src="{{.HOST}}{{ .User.Imageurl}}" class="rounded-circle " style="width: 60px; height: 60px;"><br> <p>
+                        {{.User.Username  }}
+                    </p></a>
+                  </li>
+            
+            </ul>
+            <a href="{{.HOST}}logout" class="hw-btn">Logout</a>
+        </div>
+        <div class="om-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-telegram"></i></a>
+        </div>
+    </div>
+    <!-- Offcanvas Menu Wrapper End -->
+    <!-- Header Section Begin -->
+    <header   style="position: relative;" class="header-section">
+        <div class="hs-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a href="./index.html"><img  style="border-radius: 50%;"  src="{{.HOST}}{{.Branch.Logourl}}" alt="" > </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                            <div    style="vertical-align: baseline;">
+                                <h5><strong > {{.Branch.BranchFullnameAmharic}} </strong></h5>
+                                <h6><strong > {{.Branch.BranchFullnameEnglish}} </strong></h6>
+                            </div>
+                        <div class="ht-widget">
+                            <ul>
+                                <li><i class="fas fa-code-branch"></i>Branch No</li>
+                                <li>
+                                    <a href="/"><img src="{{.HOST}}{{.User.Imageurl}}" class="rounded-circle " style="width: 60px; height: 60px;"><br> <p class="text-center">
+                                        {{.User.Username }}
+                                    </p></a>
+                                  </li>
+                            </ul>
+                            <a href="{{.HOST}}logout" class="hw-btn">logout</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="canvas-open">
+                    <span class="fas fa-bars"></span>
+                </div>
+            </div>
+        </div>
+        <div class="hs-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <nav class="nav-menu"> 
+                            <ul>
+                                <li ><a href="#">Controll</a>
+                                </li>
+                                <li ><a href="./Registration.html">Registration</a></li>
+                                <li><a href="./about.html">Payments</a></li>
+                                <li    class="active" ><a href="./blog.html">Learning</a></li>
+                                <li><a href="./contact.html">Q and A</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="hn-social">  
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr/>
+    <script src="{{.HOST}}js/learning_controll.js" >
+    </script>
+    <div style="float: right;" class="container   select_category">
+         <script>
+             var host = {{.HOST}};
+             var audioPath = "media/1593163726/stream/"
+             var elementid = "main-container"
+         </script>
+    </div>
+    <br>
+    <div class="row"  >
+        <div class="container col-3">
+            <select name="type" id="type">
+                <option   value="0">
+                    --All--
+                </option>
+                <option   value="2">
+                    --Audio--
+                </option>
+                <option   value="1">
+                    --Video--
+                </option>
+                <option   value="3">
+                    --Pdf--
+                </option>
+                <option   value="4">
+                    --Image--
+                </option>
+                <option   value="5">
+                    --Other--
+                </option>
+            </select>
+        </div>
+        <div style="float:left; " class="container col-8 wrap">
+            <div class="search">
+            <input type="text" id="query" class="searchTerm" placeholder="What are you looking for?">
+            <button  onclick="SearchResources()" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
+            </div>
+        </div>
+        
+        <script>
+
+            var Host = "http://localhost:9900/" ; 
+            var Resources =  {{ .Resources}}; 
+
+            function GetResources(){
+                var typoelem = document.getElementsByName("type");
+                var textvalue = document.getElementById("query");
+                var text = textvalue.value;
+                console.log(text);
+            }
+            function MoreResource(){
+                var offset = Resources.length;
+                $.ajax( 
+                    {
+                        type :  "GET" , 
+                        dataType : JSON, 
+                        url : Host+"learning/resources/" ,
+                        data : { offset:offset , limit : 10  } , 
+                        success : function(data ){
+                            console.log(data) ; 
+                        } , 
+                        error : function(){
+                            console.log("Error Has Happened .. ") ; 
+                        }
+                    }
+                  ) ; 
+            }
+        </script>
+        <div class="row main-page "   style="width: 100%;">
+            <div id="main-container"  style="margin-left: 20px;"  class="col-lg-8 col-md-12 col-sm-12" >
+                {{ if  eq  .ActiveResource.Type 1 }}
+                <video  poster="{{.HOST}}{{.ActiveResource.SnapShootImage}}" id=example-video class="video-js  vjs-big-play-centered vjs-default-skin" controls>
+                    <source
+                        src="{{.HOST}}{{.ActiveResource.HLSDirectory}}"
+                            type="application/x-mpegURL">
+                </video>
+                <hr>
+                <script>
+                    var player = videojs('#example-video');
+                    player.play();
+                </script>
+                <div style="padding: 10px;margin: 10px;">
+                    <h4> <strong>   {{.ActiveResource.Title}} </strong> </h4><a target="_blank" href="{{.HOST}}download/?resid={{.ActiveResource.ID}}"  class="btn"   >Download</button>
+                    <hr>
+                    <div class="col-5" >
+                        <img  style="width:50px; height:50px ; border-radius: 50%;"   src="{{.HOST}}{{.ActiveResource.UploaderImage }}" alt="The Resource Uploader Profile Picture ">
+                        <strong>  {{.ActiveResource.Uploadedby }} </strong>     
+                        <br>
+                        <strong> Uploaded at : {{  GetDateString .ActiveResource.UploadDate }} </strong>
+                        <br>
+                    </div>
+                    <hr>
+                    <p>
+                        <strong>
+                           {{ .ActiveResource.Description}}
+                        </strong>
+                    </p>
+                </div>
+                {{else if eq .ActiveResource.Type 2 }}
+                <div class="container-audio">
+                    <audio id="audio" controls  loop autoplay>
+                    </audio>
+                </div> 
+                <div class="audio-section container-audio">
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                    <div class="colum1">
+                        <div class="raw"></div>
+                    </div>
+                </div> 
+                <hr>
+                <script>
+                    var player = videojs('#example-video');
+                    player.play();
+                </script>
+                <div style="padding: 10px;margin: 10px;">
+                    <h4> <strong>   {{.ActiveResource.Title}}  </strong> </h4>
+                    <hr>
+                    <div class="col-5" >
+                        <img  style="width:50px; height:50px ; border-radius: 50%;"   src="{{.HOST}}{{.ActiveResource.UploaderImage}}" alt="">
+                        <strong><small> {{.ActiveResource.Uploadedby}}  </small></strong>
+                        <br>
+                        <strong><small> Uploaded at : {{ GetDateString .ActiveResource.UploadDate }} </small> </strong>
+                        <br>
+                        <br>
+                    </div>
+                    <hr>
+                    <p>
+                        <strong>
+                           <small> {{.ActiveResource.Description }}</small>
+                        </strong>
+                    </p>
+                </div>  
+                    <script>
+                        var audio = document.getElementById('audio');
+                       if (Hls.isSupported()) {
+                           var hls = new Hls();   //hls.js
+                           hls.loadSource(   "{{.HOST}}{{.ActiveResource.HLSDirectory}}" );
+                           hls.attachMedia(audio);
+                           hls.on(Hls.Events.MANIFEST_PARSED, function () {
+                               video.play();
+                           });
+                       } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                           video.src = host + audioPath;
+                           video.addEventListener('loadedmetadata', function () {
+                               video.play();
+                           });
+                       }
+                   </script>
+                   {{end}}
+            </div>
+            {{ $HOST := .HOST }}
+            <!-- Main Container End  -->
+            <div  style="margin-left: 20px;float: right;" class="list-container col-lg-3 col-md-12 col-sm-12 " >
+                <ul class="lists "  id="right-navigation">
+                    {{range .Resources }}
+                        {{if eq .Type 1}}
+                            <li class="element-list">
+                                <div  style="border-bottom: solid #444 1px;  height: 100%;" onclick="PlayVideo({{.ID}})" class="element row" >
+                                        <!-- <div class="col-4"> -->
+                                    <img src="{{ $HOST}}{{.SnapShootImage}}"  class="full_height col-4" style=" height: 100%;width: 100%; border-radius: 5%; background-color: #000;" alt="">
+                                    <!-- </div> -->
+                                    <div class="col-8">
+                                        <p><strong>{{ ShortTitle .Title }}</strong> </p>
+                                        <div class=""><small>Created By : {{ .Uploadedby }} </small> </div>
+                                        <div class=""><small>{{ GetDateString .UploadDate }} </small> </div>
+                                    </div>
+                                </div>   
+                            </li>
+                        {{else if eq .Type 2}}
+                            <li class="element-list">
+                                <div  style="border-bottom: solid #444 1px;  height: 100%;" onclick="PlayAudio(Resources({{.ID}}))" class="element row" >
+                                        <!-- <div class="col-4"> -->
+                                    <img src="{{ $HOST}}{{GetIcon .}}" class="full_height col-4" style=" height: 100%;width: 100%; border-radius: 5%; background-color: #000;" alt="">
+                                    <!-- </div> -->
+                                    <div class="col-8">
+                                        <p><strong>{{ ShortTitle .Title }}</strong> </p>
+                                        <div class=""><small>Created By : {{ .Uploadedby }} </small> </div>
+                                        <div class=""><small>{{ GetDateString .UploadDate }} </small> </div>
+                                    </div>
+                                </div>   
+                            </li>
+                        {{else if eq .Type 3}}
+                            <li class="element-list">
+                                <div  style="border-bottom: solid #444 1px;  height: 100%;" class="element row" >
+                                        <!-- <div class="col-4"> -->
+                                    <img src="{{ $HOST}}{{GetIcon .}}" class="full_height col-4" style=" height: 100%;width: 100%; border-radius: 5%; background-color: #000;" alt="">
+                                    <!-- </div> -->
+                                    <div class="col-8">
+                                        <p><strong>{{ ShortTitle .Title }}</strong> </p>
+                                        <div class=""><small>Created By : {{ .Uploadedby }} </small> </div>
+                                        <div class=""><small>{{ GetDateString .UploadDate }} </small> </div>
+                                        
+                                        <a style="border-radius: 10%;padding: 5px;" class="btn-primary" href="{{$HOST}}{{.Path}}"  ><span> Open</span></a>
+                                        <a style="border-radius: 10%;padding: 5px;" target="_blank" class="btn-primary background-color:#ff0000" href="{{$HOST}}/download/?resid={{.ID}}" ><span>Download</span></a>
+                                    </div>
+                                </div>   
+                            </li>
+                        {{else if eq .Type 4}}
+                            <li class="element-list">
+                                <div  style="border-bottom: solid #006699 1px;  height: 100%;" class="element row" >
+                                        <!-- <div class="col-4"> -->
+                                    <img src="{{ $HOST}}{{.Path}}" onclick="img_box('{{ $HOST}}{{ GetIcon .}}')" class="full_height col-4" style=" height: 100%;width: 100%; border-radius: 5%; background-color: #000;" alt="">
+                                    <!-- </div> -->
+                                    <div class="col-8">
+                                        <p><strong>{{ ShortTitle .Title }}</strong> </p>
+                                        <div class=""><small>Created By : {{ .Uploadedby }} </small> </div>
+                                        <div class=""><small>{{ GetDateString .UploadDate }} </small> </div>
+                                        <a style="border-radius: 10%;padding: 5px;" target="_blank" class="btn-primary" href="{{$HOST}}{{.Path}}"  ><span> Open</span></a>
+                                    </div>
+                                </div>   
+                            </li>
+                        {{else }}
+                            <li class="element-list">
+                                <div  style="border-bottom: solid #444 1px;  height: 100%;" class="element row" >
+                                        <!-- <div class="col-4"> -->
+                                    <img src="{{ $HOST}}{{ GetIcon .}}"  class="full_height col-4" style=" height: 100%;width: 100%; border-radius: 5%; background-color: #000;" alt="">
+                                    <div class="col-8">
+                                         <p><strong> {{ ShortTitle .Title }}</strong> </p>
+                                         <div class=""><small>Created By : {{ .Uploadedby }} </small> </div>
+                                         <div class=""><small>{{ GetDateString .UploadDate }} </small> </div>
+                                        <a style="border-radius: 10%;padding: 5px;" class="btn-primary" href="{{$HOST}}{{.Path}}"  ><span> Open</span></a>
+                                        <a style="border-radius: 10%;padding: 5px;"  target="_blank" class="btn-primary background-color:#ff0000" href="{{$HOST}}/download/?resid={{.ID}}" ><span>Download</span></a>
+                                    </div>
+                                </div>   
+                            </li>
+                        {{end}}
+                    {{end}}
+                    <li>
+                        <button class="btn-primary" onclick="MoreResource()" style="border-radius: 10%;padding: 5px 20px 5px 20px  ;margin-top: 40px;text-align:center;"><strong> __ See More</strong></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div    class="fs-about">
+                        <div class="fs-logo">
+                            <a href="#">
+                                <img src="{{.HOST}}img/logo.png" alt="" style="width: 100px; height: 100px;">
+                            </a>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua ut aliquip ex ea</p>
+                        <div class="fs-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Help</h5>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                            <li><a href="#">Knowledgebase</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Links</h5>
+                        <ul>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Create Property</a></li>
+                            <li><a href="#">My Properties</a></li>
+                            <li><a href="#">Register</a></li>
+                            <li><a href="#">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fs-widget">
+                        <h5>Newsletter</h5>
+                        <p>Deserunt mollit anim id est laborum.</p>
+                        <form action="#" class="subscribe-form">
+                            <input type="text" placeholder="Email">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+     </div>
+    </footer>
+
+    
+    <!-- Js Plugins -->
+    <script src="{{.HOST}}js/jquery.js"></script>
+    <script src="{{.HOST}}js/bootstrap.min.js"></script>
+    <script src="{{.HOST}}js/mixitup.min.js"></script>
+    <script src="{{.HOST}}js/jquery.nice-select.min.js"></script>
+    <script src="{{.HOST}}js/jquery.slicknav.js"></script>
+    <script src="{{.HOST}}js/image-uploader.min.js"></script>
+    <script src="{{.HOST}}js/img_box.js"></script>
+    <script src="{{.HOST}}js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCtype html>
+
+<html>
+    <head>
+        <meta charset="utf-8" >
+    <link rel="stylesheet" href="{{.Host}}css/bootstrap.min.css" type="text/css">
+    </head>
+    <body>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            body {
+                font-size: 10;
+            }
+            th, td {
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr{
+                background-color: #f2f2f2;
+                border: #006699 solid 2px;
+                border: solid #006699 2px;
+                }
+                td{
+                    border: #000 solid 2px;
+                    text-align: center;
+                }
+                .students_list{
+                    border: solid 1px ;
+                }
+                caption {
+                    color: black;
+                    font-weight: bold;
+                    font-style: italic;
+                    box-shadow: 2px 2px 2px ;
+                }
+                td {
+                    font-size: smaller;
+                }
+
+            th {
+                width: auto;
+                background-color: #006699;
+                color: white;
+            }
+            table{
+                text-decoration: none;
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+                <img  style=" text-align: center; border-radius: 50%;"  
+                      class="col-2" 
+                      src="{{.Host}}{{.Branch.Logourl }}" 
+                      alt="The Logo Of the Breanch"  
+                      >
+                <div class="col-6">
+                    <h5><strong> {{.Branch.BranchFullnameAmharic}} </strong></h5>
+                    <h5><strong> {{.Branch.BranchFullnameEnglish}} </strong></h5>
+                    <h6><strong>Branch Number : {{.Branch.ID}} </strong></h6>
+                    <h6><strong><small> Year : {{ GetDate 0 }} </small> </strong></h6>
+                </div>
+            </div>
+        </div>
+        {{ if .Success }}
+        <div class="container">
+            <h5  style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: lighter; font-style: italic;">  Schedule For <br>Category <strong> {{.Round.Category.Title }}</strong> <br>Round Number : <strong>{{.Round.Roundnumber }} </strong></h5>
+        </div>
+        
+        <div class="container">
+            <table>
+                <thead>
+                    <th>
+                        No.
+                    </th>
+                    <th>
+                        Full Name 
+                    </th>
+                    <th>
+                        Username 
+                    </th>
+                    <th>
+                        Password
+                    </th>
+                    <!-- <th>
+                        Image Number
+                    </th> -->
+                </thead>
+                <br>
+                <tbody>
+                    {{range $index , $student := .Students}}
+                    <tr>
+                        <td> {{$index}} </td>  
+                    
+                    <td>
+                        {{ $student.Firstname }} {{ $student.Lastname }} {{ $student.GrandFatherName }}
+                    </td>
+                    <td>
+                        {{$student.Username}}
+                    </td>
+                    <td>
+                        {{ $student.Password }}
+                    </td>
+                    </tr>
+                    {{end}}
+                </tbody>
+            </table>
+        </div>
+        <br>
+        <hr>
+        <small  style="text-align: center;" ><strong>  {{.Branch.BranchFullnameAmharic }}   </strong></small>
+        <br>
+        {{else }}
+       <strong> {{ .Message }}  </strong>
+        {{end}}
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!Doctype html >
+<html>
+    <head>
+    <link rel="stylesheet" href="{{.Host}}css/bootstrap.min.css" type="text/css"> 
+    </head>
+    <body>
+        <style>
+            .container{
+                /* float: center; */
+                text-align: center;
+            }
+            body{
+                text-align: center;
+                vertical-align: center;
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <img style="border-radius: 50%;width: 50px;height: 50px;" src="{{.Host}}{{.Branch.Logourl}}" alt="The Branch Logo ..."  >
+                </div>
+                <div class="col-10">
+                    <div><strong> {{.Branch.BranchFullnameAmharic}}</strong></div>
+                    <div><strong>{{.Branch.BranchFullnameEnglish}}</strong></div>
+                </div>
+            </div>
+        </div>
+        {{if .Success }}
+       <div class="container" >    
+            <strong> Category : {{ .Payment.Round.Category.Title }}  </strong>
+            <p> <strong>Round Number : {{.Payment.Round.Roundnumber }}</strong> 
+                <strong> Payment Recipt </strong></p>
+        </div>
+        <div  class="container">
+            <h5> Full Name :</h5>
+            <strong>{{.Payment.Student.Firstname}} {{.Payment.Student.Lastname}} {{.Payment.Student.GrandFatherName}}</strong><br>
+            Username : <strong>{{.Payment.Student.Username }} </strong>
+        </div>
+        <hr>
+        <div  class="container">
+            Recipent Name : <strong>{{.Payment.Admin.Firstname }} {{.Payment.Admin.Lastname }} {{.Payment.Admin.GrandName }}</strong><br>
+            Recipent Username : <strong> {{.Payment.Admin.Username}} </strong>
+        </div>
+        <div  class="container">
+            Paid Amount : <strong> {{.Payment.Amount }} </strong>
+        </div>
+        <div  class="container"  >
+            <!-- Remaining Amount  : <strong> {{  .Payment.Round.Cost }} </strong><br> -->
+            Remaining Amount  : <strong>{{.Payment.Student.PaidAmount }}/{{.Payment.Round.Cost }}</strong>  <br>
+        </div>
+        <div class="container"  >
+            Transaction Date :<strong> {{.Payment.Date}}</strong> <br>{{.Payment.Date.Hour }}: {{.Payment.Date.Minute }}
+        </div>
+        {{else }}
+        <div class="container">
+            <strong>
+                {{.Message }}
+            </strong>
+        </div>
+        {{end}}
+    </body>
+</html>

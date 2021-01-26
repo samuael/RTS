@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link  rel="stylesheet"  href="{{.HOST}}css/id_style.css" >
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="{{.HOST}}css/bootstrap.min.css" type="text/css">
+    </head>
+    <body>
+        {{ $ds := .}}
+        <div class="row">
+            {{range .Students }}
+            <div class="col-6">
+                <pre>
+                    <div style="width: 525px;height: 325px;background-image: url('{{$ds.HOST}}img/agents/IMG_20200711_114012.jpg');" class="main_container container">
+                       <div class="header row">
+                           <img  id="branch_image" src="{{$ds.HOST}}{{$ds.Branch.Logourl}}" alt=""><span  style="width: 10px;" ></span>
+                           <span style="margin-top: -20px;" ><h5  style="font-family:sans-serif;font-style: oblique;font-weight: bolder;">{{$ds.Branch.BranchFullnameAmharic}}</h5><h5>{{$ds.Branch.BranchFullnameEnglish}}</h5></span>
+                       </div>
+                       <div id="title" class="container">
+                        <span class="title_local"> {{ Tran $ds.Lang "Trainers ID Card" }}</span>
+                        <span class="title_english">Trainers ID Card</span>
+                        </div>
+                           <div  class="body">
+                            
+                                                               <span class="student_photo"><img  id="student_image" src="{{$ds.HOST}}{{ .Imageurl }}" alt=""></span>
+                       <div class="listo" >
+                           <label >{{ Tran $ds.Lang "Full name"}}</label>     : <span class="values"> {{.Firstname}}{{.Lastname}}{{.GrandFatherName}} </span>
+                           <label >{{ Tran $ds.Lang "Category"}}</label>     : <span class="values"> {{.Category.Title}}</span>
+                           <label >{{ Tran $ds.Lang "ID"}}</label>              : <span class="values"> {{.Username}} </span>
+                           <label >{{ Tran $ds.Lang "Phone"}}</label>         : <span class="values"> {{.PhoneNumber }}</span>
+                           <label>{{ Tran $ds.Lang "Sex"}}</label> <span class="values"> {{.Sex}}</span> <label> {{Tran $ds.Lang "Age"}}</label> <span class="values"> {{GetAge .BirthDate}}  </span>
+                           <label >{{ Tran $ds.Lang "Address"}}</label>
+                           <label >{{ Tran $ds.Lang "Region"}}</label> : <span class="values">{{ $ds.Branch.Address.Region}}</span><label >{{ Tran $ds.Lang "City"}} </label> :<span class="values">{{$ds.Branch.City}} </span>             
+                       </div>
+                           </div>
+                        <p class="phones"> {{range $ds.Branch.Phones}} {{.}}/{{end}} </p>
+                    </div>
+                </pre>
+            </div>
+            {{end}}
+        </div>
+    </body>
+</html>

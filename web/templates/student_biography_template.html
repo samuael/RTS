@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html >
+    <head >
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="{{.Host}}css/bootstrap.min.css" type="text/css">
+    </head>
+    <body>
+        <style>
+            pre {
+                color:  #000;
+                font-family: sans-serif;
+                font-weight: bolder;
+                font-size: 18px;
+                border: solid 0.25px #fff ;
+            }
+        </style>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+            <img  style="border-radius: 50%;width:100px;height: 100px" src="{{.Host}}{{.Branch.Logourl}}" alt="The Logo Paht of the Branch ">
+
+            </div>
+            <div class="col-9">
+                <div    style="vertical-align: baseline;">
+                    <h4><strong > {{.Branch.BranchFullnameAmharic}} </strong></h4>
+                    <h4><strong > {{.Branch.BranchFullnameEnglish}} </strong></h4>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    {{if .Success }}
+<div class="container" > 
+        <pre>
+        {{.Branch.BranchFullnameAmharic }}
+        የእጩ አሽከርካሪዎች የህይዎት ታሪክ ፎርም
+        
+        1. ሙሉ ስም <strong  > {{.Student.Firstname }} {{.Student.Lastname}} {{.Student.GrandFatherName}} </strong> የእናት ስም 					
+        
+        2. ቅፅል ስም   <strong  >{{.Student.Nickname }} </strong> ፆታ <strong >{{.Student.Sex}}</strong>  ዕድሜ <strong >{{ GetAge .Student.BirthDate }} የት/ት/ደረጃ <strong  >{{.Student.AcademicStatus }} </strong><span ></span>                                                                                                      
+        
+        3. የትውልድ ቦታ ክልል<strong style="text-decoration: underline;"> {{if .Student.BirthAddress.Region }} {{.Student.BirthAddress.Region}} {{else }} __________{{end}} </strong>  ዞን <strong style="text-decoration: underline;"  >{{if .Student.BirthAddress.Zone}} {{.Student.BirthAddress.Zone}} {{else }} _________{{end}} </strong> ወረዳ <strong  >{{ if .Student.BirthAddress.Woreda }} {{.Student.BirthAddress.Woreda }}  {{else }} ___________{{end }} </strong> ከተማ <strong style="text-decoration: underline;"  >___________</strong> ቀበሌ <strong >{{  if .Student.BirthAddress.Kebele}} {{.Student.BirthAddress.Kebele}} {{else }} __________ {{end}} </strong> 
+        
+        4. የተወለደበት/ችበት ቀን  <strong style="text-decoration: underline;"  >{{.Student.BirthDate.Day}} </strong> ወር <strong style="text-decoration: underline;"  >{{.Student.BirthDate.Month}} </strong> ዓ.ም  <strong style="text-decoration: underline;"  >{{.Student.BirthDate.Year}} </strong> 		
+        
+        5. የመኖሪያ አካባቢ ክልል <strong style="text-decoration: underline;"  >{{.Student.Address.Region}}</strong> ዞን  <strong style="text-decoration: underline;"  >{{.Student.Address.Zone}}</strong> ወረዳ  <strong style="text-decoration: underline;"  >{{.Student.Address.Woreda}}</strong>  ከተማ  <strong style="text-decoration: underline;"  >_______________</strong> ቀበሌ  <strong style="text-decoration: underline;"  >{{.Student.Address.Kebele }}</strong> 
+        የሰፈሩ ልዩ መጠሪያ ___________ የቤ /ቁ   ________  ስልክ ቁጥር መደበኛ  <strong style="text-decoration: underline;"  > {{.Student.PhoneNumber}} </strong>		  
+        ተንቀሳቃሽ __________________ የስራ ሁኔታ _____________________		
+        <!-- ያገባ   	ያላገባ	 -->
+        
+        6. የጋብቻ ሁኔታ   <strong style="text-decoration: underline;"  >{{.Student.MaritialStatus}}  </strong> የቤተሰብ ብዛት	<strong style="text-decoration: underline;"  >{{.Student.FamilyCount}}</strong>
+        
+        7. የተያዥ ሙሉ ስም  <strong style="text-decoration: underline;"  >{{.Student.GuarantorFullName}} </strong> ክልል <strong style="text-decoration: underline;"  >{{.Student.GuarantorAddress.Region}}</strong> ከተማ <strong style="text-decoration: underline;"  >{{ if .Student.GuarantorAddress.City}} {{.Student.GuarantorAddress.City}} {{else }}__________{{end}} </strong> ስልክ 		
+        
+        8. ቀድሞ ይዘውት የነበረው መንጃ ፍቃድ <strong style="text-decoration: underline;"  >{{.Student.PreviousLicenceNumber}} </strong> ዓይነት <strong style="text-decoration: underline;"  >{{.Student.PreviousLicenceType}} </strong> 
+            መሰልጠን የሚፈልጉ የመንጃ ፈቃድ ንዑስ ምድብ  <strong style="text-decoration: underline;"  >{{.Student.Category.Title}} </strong> 
+            <!-- ምልክት ያድርጉ  -->
+              <!-- ሞ      ታ1      ታ2      ደ1      ደ2       ደ3        ሕ1      ሕ2
+        
+              አውቶሞቢል       ፊ1       ፊ2       ልዩ1       ልዩ2       ልዩ3       -->
+        
+        
+              ማሳሰቢያ ፡- እኔ <strong style="text-decoration: underline;"  > {{.Student.Firstname }} {{.Student.Lastname}} {{.Student.GrandFatherName}} </strong> የተባልኩ በትራንስፖርት ቢሮ የአሽከርካሪ መንጃ ፍቃድ ስልጠና ለመውሰድ 
+        
+        ያመጣሁት የትምህርት ማስረጃ ትክክል መሆኑን እያረጋገጥኩ እና የትምህርት ማስረጃዬ ተጣርቶ ህጋዊ ካልሆነ በህግ ልጠየቅ እንደምችል 
+        
+        በአሽከርካሪ ማረጋገጫ በአዋጅ ቁጥር 600/2000 አንቀፅ 14 ንዑስ አንቀፅ 1 እና በሌሎችም ህጎች ተጠያቂ ልሆን
+        
+        እንደምችል በተቋሙ ቀርቤ በፊርማዬ አረጋግጣለሁ፡፡ 
+            
+        
+        የሰልጣኙ ስም <strong style="text-decoration: underline;" > {{.Student.Firstname }} {{.Student.Lastname}} </strong>		ያረጋገጠው ________________				
+        
+        ፊርማ ______________			     ፊርማ  _____________________		 
+        
+        ቀን	{{  GetDate 0  }}				ቀን	{{ GetDate 0 }}	
+            
+            
+        </pre>
+    </div>
+    {{else }}
+
+    <div style="  box-shadow: 10px 10px 10px #006699" class="container">
+        <h2  style="color: #006699;">
+            {{.Message }}
+        </h2>
+    </div>
+
+    {{end }}
+    </body>
+</html> 

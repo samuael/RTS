@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Aler Template">
+    <meta name="keywords" content="Aler, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aler | Add System Users </title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/styledButton.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Wrapper Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <span class="icon_close"></span>
+        </div>
+        <div class="logo">
+            <a href="./index.html">
+                <img src="img/logo.png" alt="">
+            </a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="om-widget">
+
+        </div>
+
+    </div>
+    <!-- Offcanvas Menu Wrapper End -->
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="hs-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="ht-widget">
+                            <ul>
+                                <li><i></i><strong>Branch Name</strong> </li>
+                                <li><i class="fa "></i><strong> Username</strong> </li>
+                                <a href="#" class="hw-btn"><strong>Logout</strong> </a>
+                            </ul>
+                            <!-- <a href="#" class="hw-btn">Submit property</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="canvas-open">
+                    <span class="icon_menu"></span>
+                </div>
+            </div>
+        </div>
+        <div class="hs-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-11">
+                        <nav class="nav-menu">
+                            <ul>
+                                <li ><a href="./index.html">Home</a></li>
+                                <li><a href="./agents.html">Chart</a></li>
+                                <li><a href="./about.html">Schedule</a></li>
+                                <li><a href="./blog.html">Learning</a></li>
+                                <li  class="active"><a href="./blog.html">Registration</a></li>
+                                <li><a href="./blog.html">Lectures</a></li>
+                                <li><a href="./contact.html">Field Mans</a></li>
+                                <li><a href="./contact.html">Students</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <!-- Contact Section End -->
+    <section>
+        <script>
+            function addTrainee() {
+                var elem = document.getElementById("addingTrainee");
+                if (elem.style.display == "none") {
+                    elem.setAttribute("style", "display:block;");
+
+                } else {
+                    elem.setAttribute("style", "display:none;");
+                }
+
+            }
+        </script>
+        <!-- Add Student Category Begin -->
+        <div class="row"  onclick="addTrainee()">
+        <div class="col-lg-8 col-md-8">
+            <div class="section-title">
+                <h4> Add Student </h4>
+            </div>
+        </div>
+        </div>
+        <div class="container" id="addingTrainee" style="display:block ;transition-duration: 1000ms;  transition-delay: 1000ms; "  >
+        <form action=""  method="POST">
+        <div >
+            <div class="row">
+                <label><strong>Full Name </strong> </label>
+                <br><br><br><br>
+                <input type="text" placeholder="First name " name="firstname" >
+                <input type="text" placeholder="Father name " name="lastname">
+                <input type="text" placeholder="Grand Father name " name="grandname">
+            </div>
+            <br>
+            <label>Sex</label>
+            <br>
+            <select name="sex" id="sex">
+                <option
+                value="M" >
+                Male
+                </option>
+                <option
+                value="F" >
+                Female
+                </option>
+
+            </select>
+            <br>
+            <br>
+
+            <label > Age :</label>
+            <br>
+            <input type="number" name="age" placeholder="age">
+            <br>
+            <label>Academic Status </label>
+            <br>
+            <input type="text"  name="status" placeholder="Academic Status" ><br>
+            <label>
+                Language
+            </label>
+            <br>
+            <select id="Language" name="language" >
+                <option value="amh">
+                    Amharic
+                </option>
+                <option value="oro">
+                    Oromifa
+                </option>
+                <option value="eng">
+                    English
+                </option>
+            </select>
+            <br>
+             <br>
+            <label>Category</label>
+            <br>
+            <select  name="category" id="category" >
+                <option value="0">
+                    Bajaj
+                </option>
+
+                <option value="1">
+                    Motor
+                </option>
+                <option value="2">
+                    Hizb-1
+                </option>
+            </select>
+            <br>    
+            <br>
+            <label>City</label>
+            <br>
+
+            <input type="text" placeholder="City" name="City"   > 
+            <br>
+            <br>
+            <label>Kebele</label>
+            <br>
+
+            <input type="text" placeholder="Kebele" name="Kebele" > 
+            <br>
+            <label>
+                Phone No:
+            </label>
+            <br>
+            <input  type="number"  placeholder="Phone Number">
+            <br>
+            <br>
+            <br>
+            <a onclick="" type="submit" class="styledButton" style="color: azure;" > <strong><i>Add</i><strong> </a>
+<br>
+<br>
+
+        </div> 
+    </form>
+
+    </div>
+        <!-- Add Student End  -->
+
+
+
+        <style>
+        .inputo {
+            padding: 10px;
+            border-color: #006699;
+            border-radius: 5%;
+            margin-bottom: 20px;
+        }
+    </style>
+     <script>
+        function addAdmins(){
+            console.log("addAdmin Function");
+            var element = document.getElementById("adminNewInput");
+            if(element.style.display=="none"){
+                element.setAttribute("style" , "display:block");
+            }else {
+                element.setAttribute("style" , "display:none");
+            }
+        }
+    </script>
+    <div onclick="addAdmins()" class="row">
+        <div onclick="addAdmins()" class="col-lg-8 col-md-8">
+            <div onclick="addAdmins()" class="section-title">
+                <h4>Register Admin</h4>
+            </div>
+        </div>
+    </div> 
+
+    <div class="container" id="adminNewInput" style="display: none;" >
+        <form action="/"  method="POST"  enctype="multipart/form-data">
+        <div class="row">
+            <label><strong>Full Name </strong> </label>
+                <br>
+                <br><br>
+                <br>
+            <input type="text" placeholder="First name " name="firstname">
+            <input type="text" placeholder="Father name " name="lastname">
+            <input type="text" placeholder="Grand Father name " name="grandname">
+        </div>
+        <div class="row">
+            <div class="col-12 ts-social"  >
+                <label>
+                    Phone No:
+                </label>
+                <br>
+                <input type="number" placeholder="Phone Number">
+                <br>
+                <br>
+                <label>
+                    Role : 
+                </label>
+                <br>
+                <select name="role" id="category">
+                    <option value="secretary">
+                        Secretary 
+                    </option>
+                
+                    <option value="admin">
+                        Admin
+                    </option>
+                    
+                </select>
+                <br><br>
+                <input  class="hw-btn" width="30px" height="30px" 
+                    style="color: #006699;background-color: white;font-weight: bold;font-style: italic;
+                        border: #006699 solid 1px;
+                        box-shadow: 3px 3px 3px;
+                    " 
+                    name="profilePic" 
+                    
+                    type="file" placeholder="Profile Pic" accept="image/x-png,image/gif,image/jpg , image/jpeg" />
+                <br><br><br><a href="#" type="submit" style="margin-bottom: 30px ;"  onclick="" id="addAdmin" class="styledButton"> Add Admin </a>
+<br> <br>
+            </div>
+        </div>
+        </form>
+    </div> 
+<script>
+    var registerlecture = "registerlecture";
+    var registerfieldman = "registerfieldman";
+    function showMore(theid) {
+        console.log("addAdmin Function");
+        var element = document.getElementById(theid);
+        if (element.style.display == "none") {
+            element.setAttribute("style", "display:block");
+        } else {
+            element.setAttribute("style", "display:none");
+        }
+    }
+</script>
+
+    <div onclick="showMore(registerlecture)" class="row">
+        <div onclick="addLecture()" class="col-lg-8 col-md-8">
+            <div onclick="addAdmins()" class="section-title">
+                <h4>Register Lecture </h4>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="registerlecture" style="display: none;">
+        <form action="/" method="POST" enctype="multipart/form-data"  >
+            <div class="row">
+                <label><strong>Full Name </strong> </label>
+                <br><br><br><br>
+                <input type="text" placeholder="First name " name="firstname">
+                <input type="text" placeholder="Father name " name="lastname">
+                <input type="text" placeholder="Grand Father name " name="grandname">
+                <br>
+                
+                <input type="number" placeholder="Phone Number">
+                <br>
+                <br>
+            </div>
+            <div class="row">
+                <div class="col-12 ts-social">
+                    <label>
+                        <strong>Profile Picture </strong>
+                    </label><br>
+                    <input class="styledButton" name="profilePic" type="file" placeholder="Profile Pic"
+                        accept="image/x-png,image/gif,image/jpg , image/jpeg" />
+                        
+                        <br><br>
+                    <a href="#" style="margin-bottom: 30px ;"   type="submit"onclick="" id="addAdmin" class="styledButton"> Register </a>
+                    <br><br>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+
+    <div onclick="showMore(registerfieldman)" class="row">
+        <div  class="col-lg-8 col-md-8">
+            <div onclick="addAdmins()" class="section-title">
+                <h4>Register Trainer </h4>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="registerfieldman" style="display: none;">
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <label><strong>Full Name </strong> </label>
+                <br><br><br><br>
+                <input type="text" placeholder="First name " name="firstname">
+                <input type="text" placeholder="Father name " name="lastname">
+                <input type="text" placeholder="Grand Father name " name="grandname">
+                <input type="text" placeholder=" Vehicle Board Number" name="boardnumber">
+                <br>
+                <br>
+                <label>
+                    Phone No:
+                </label>
+                <br><br>
+                <input type="number" placeholder="Phone Number">
+                <br>
+                <br>
+
+            </div>
+            <div class="row">
+                <div class="col-12 ts-social">
+                    <label>
+                        <strong>Profile Picture </strong>
+                    </label>
+                    <input class="styledButton" name="profilePic" type="file" placeholder="Profile Pic"
+                        accept="image/x-png,image/gif,image/jpg , image/jpeg" />
+<br><br>
+                    <a href="#" style="margin-bottom: 30px ;" type="submit" onclick="" id="addAdmin" class="styledButton">
+                        Register 
+                    </a>
+                    <br><br>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+        
+        <!-- Add New Categories section -->
+
+        <!-- <div class="property-sidebar">
+            <div class="single-sidebar  container">
+                <div class="top-agent row">
+                    <div class="ta-item col-lg-3 col-sm-9 elevated">
+                        <div class="ta-pic set-bg"></div>
+                        <div class="ta-text">
+                            <h4><strong><i><a href="#">Motor </a></i></strong></h4></strong>
+                        </div>
+                    </div>
+                    <div class="ta-item  col-lg-3 col-sm-9 elevated">
+                        <div class="ta-pic set-bg" "></div>
+                <div class=" ta-text">
+                            <h4><strong><i><a href="#">Bajaj</a></i></strong></h4></strong>
+                        </div>
+                    </div>
+                    <div class="ta-item  col-lg-3 col-sm-9  elevated">
+                        <div class="ta-pic set-bg"></div>
+                        <div class="ta-text  ">
+                            <h4><strong><i><a href="#">Hzb 1</a></i></strong></h4></strong>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" onclick="addNewCategory()" class="styledButton">New Category </a>
+            </div>
+            <script>
+                function addNewCategory() {
+                    console.log("addAdmin Function");
+                    var element = document.getElementById("addnewCategory");
+                    if (element.style.display == "none") {
+                        element.setAttribute("style", "display:block");
+                    } else {
+                        element.setAttribute("style", "display:none");
+                    }
+                }
+            </script>
+        </div> -->
+        <!-- Add New Categories section  End-->
+        <!-- Add New Category Input section -->
+        <div class="container" id="addnewCategory" style="display: none;">
+            <div class="row">
+                <div class="col-10 ts-social">
+                    <hr>
+                    <input type="text" placeholder="categoryname"><br>
+                    <br><br>
+                    <a href="" class="styledButton"> Add</a>
+                    <hr>
+                </div>
+            </div>
+        </div>
+        <!-- Add New Category Input section   END-->
+
+        <script>
+            function showtable() {
+                var element = document.getElementById("teachersTable");
+                if (element.style.display == "none") {
+                    element.setAttribute("style", "display:block;")
+                } else {
+                    element.setAttribute("style", "display:none;")
+                }
+            }
+        </script>
+    <!-- <div class="row" onclick="showtable()" >
+        <div class="col-lg-8 col-md-8">
+            <div class="section-title">
+                <h4> Lectures </h4>
+            </div>
+        </div>
+    </div> -->
+    <!-- <div class="container" id="teachersTable" style="display: none;">
+        <table  class="lecturestable" id="" >
+            <tr>
+                <th>
+                    ID
+                </th>
+                <th>
+                    Name 
+                </th>
+                <th>
+                    Phone No
+                </th>
+            </tr>
+            <tr>
+                
+                <td>
+                    L123
+                </td>
+                <td>
+                    Muhammed Hsen
+                </td>
+                <td>
+                    0946438493
+                </td>
+            </tr>
+            <tr>
+             
+                <td>
+                    L123
+                </td>
+                <td>
+                    Muhammed Hsen
+                </td>
+                <td>
+                    0946438493
+                </td>
+            </tr>
+            <tr>
+                
+                <td>
+                    L123
+                </td>
+                <td>
+                    Muhammed Hsen
+                </td>
+                <td>
+                    0946438493
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    L123
+                </td>
+                <td>
+                    Muhammed Hsen
+                </td>
+                <td>
+                    0946438493
+                </td>
+            </tr>
+        </table>
+        <div class="container">
+            <hr>
+            <input  type="text" placeholder="full name" >
+            <br>
+            <input type="number" placeholder="Phone Number">
+            <br>
+            <hr>
+
+            <a href="#"  class="styledButton" >Add Lecture </a>
+            <hr>
+
+        </div>
+    </div> -->
+        <script>
+            var newClassmate = "newClassmate";
+            var newfieldTrainer = "newfieldTrainer";
+            var addAdminss = "addAdminss";
+            function showMore(id) {
+                var elem = document.getElementById(id);
+                if (elem.style.display == "none") {
+                    elem.setAttribute("style", "display:block");
+                } else {
+                    elem.setAttribute("style", "display:none");
+                }
+            }
+        </script>
+        <!-- <div onclick="showMore(addAdminss)" class="row">
+            <div class="col-lg-8 col-md-8">
+                <div class="section-title">
+                    <h4>Rooms</h4>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <table>
+                <tr>
+                    <th>Room No</th>
+                    <th>Capacity </th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>20</td>
+                <tr>
+                <tr>
+                    <td>2</td>
+                    <td>20</td>
+                <tr>
+                <tr>
+                    <td>3</td>
+                    <td>20</td>
+                <tr>
+                <tr>
+                    <td>4</td>
+                    <td>20</td>
+                <tr>
+                <tr>
+                    <td>5</td>
+                    <td>20</td>
+                <tr>
+            </table>
+        </div> -->
+        </div>
+    </section>
+
+    <!--  List Of Categories End  -->
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fs-about">
+                        <div class="fs-logo">
+                            <a href="#">
+                                <img src="img/f-logo.png" alt="">
+                            </a>
+                        </div>
+                        <p>Shambel Vehicle Training Institute !<br><ins>WebSite Developer Samuael Adnew
+                                <br><strong>samuaeladnew@gmail.com</strong></ins></p>
+                        <!-- <div class="fs-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+            <div class="copyright-text">
+                <p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is
+                    made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                        target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.richtext.min.js"></script>
+    <script src="js/image-uploader.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML >
+<html>
+    <head>
+        <head >
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        </head>
+        <body>
+            <link href="css/id_style.css" rel="stylesheet" >
+            {{ define "frontpage" }}
+            <pre>
+                <div style="width: 525px;height: 325px;background-image: url('img/agents/IMG_20200711_114012.jpg');" class="main_container container">
+                   <div class="header row">
+                       <img  id="branch_image" src="img/agents/agent-1.jpg" alt=""><span  style="width: 10px;" ></span>
+                       <span style="margin-top: -20px;" ><h5  style="font-family:sans-serif;font-style: oblique;font-weight: bolder;">Branch Name Amharic </h5><h5>Branch Name Englich  </h5></span>
+                   </div>
+                   <div id="title" class="container">
+                    <span class="title_local">ye Temariwoch ID Card</span>
+                    <span class="title_english">Trainers ID Card</span>
+                    </div>
+                       <div  class="body">
+                        
+                                                           <span class="student_photo"><img  id="student_image" src="img/agents/agent-1.jpg" alt=""></span>
+                   <div class="listo" >
+                       <label >Full name</label>     : <span class="values"> Samuael adnew </span>
+                       <label >Category </label>     : <span class="values"> Samuael adnew </span>
+                       <label >ID</label>              : <span class="values"> Samuael adnew </span>
+                       <label >Phone</label>         : <span class="values"> 0992078204 </span>
+                       <label>Sex </label> <span class="values"> M </span> <label> Age </label> <span class="values"> 19 </span>
+                       <label >Address</label>
+                       <label >Region</label> : <span class="values">Benishangul </span><label >City </label> :<span class="values">Assosa </span>             
+                   </div>
+                       </div>
+                    <p class="phones"> 0992078204/0992078204/0992078204  </p>
+                </div>
+            </pre>
+
+            {{end}}
+
+            {{ define "backpage" }}
+            <pre>
+                <div style="width: 525px;height: 325px;background-image: url('{{.HOST}}img/agents/images.png');" class="main_back_container container">
+                   <strong style="text-decoration: underline;"> {{.Branch.BranchFullnameAmharic}}  </strong> 
+                    <h4 id="disclimer" >{{Tran .Branch.Lang "Disclaimer"}}</h4>
+                   <p class="disclaimer_text" > {{ Tran .Branch.Lang "This ID is Valid for"}}  
+                ____________ {{Tran .Branch.Lang "Months Only"}}.  </p>
+                <div id="branch_back_center_image"> 
+                    <img  id="branch_back_center_image" src="{{.HOST}}{{.Branch.Logourl}}" alt=""><span  style="width: 10px;" ></span>
+                </div> 
+
+
+
+
+
+                <div  class="bottom_back" >
+                    <span id="theDirector" ><p  > {{Tran .Branch.Lang "Directors Name and Signature"}} </p></span>                                                                        
+                    <span  id="back_date" >
+                        <strong class="back_title" >{{Tran .Branch.Lang "Given Date"}}</strong>
+                        <strong style="text-decoration: underline;" class="back_values">{{ GetDate 0 }}</strong>             ________________________________
+                    </span>
+                    </div>                             
+                </div>
+            </pre>
+            {{end}}
+    </body>
+</html>
+

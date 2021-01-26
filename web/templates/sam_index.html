@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Aler Template">
+    <meta name="keywords" content="Aler, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aler | Template</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="css/styledButton.css" type="text/css">
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Wrapper Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <span class="icon_close"></span>
+        </div>
+        <div class="logo">
+            <a href="./index.html">
+                <img src="img/logo.png" alt="">
+            </a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="om-widget">
+            <a href="./login.html" class="hw-btn">Login</a>
+        </div>
+
+
+    </div>
+    <!-- Offcanvas Menu Wrapper End -->
+
+    <!-- Header Section Begin -->
+    <header class="header-section">
+        <div class="hs-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a href="./sam_index.html"><img style="border-radius:50%; border-color: darkgreen;border-style: solid;"
+                                    src="{{.Branch.Logourl }}" alt=""></a>
+                        </div>
+                    
+                    </div>
+                    <div class="col-lg-5" style="margin-top: 30px;">
+                        <h4><i> <strong> {{.Branch.BranchFullnameAmharic }} </strong></i></h4>
+                        <br>
+                        <h5> <strong> {{.Branch.BranchFullnameEnglish}} </strong></h5>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="ht-widget">
+                            <a href="./login.html" class="hw-btn">Login </a>
+                            <select  name="lang">
+                                <option value="amh">
+                                    Amharic
+                                </option>
+                                <option value="amh">
+                                    English
+                                </option>
+                                <option value="amh">
+                                    Oromifa
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="canvas-open">
+                    <span class="icon_menu"></span>
+                </div>
+            </div>
+        </div>
+        <div class="hs-nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <nav class="nav-menu">
+                            <ul>
+                                <li class="active"><a href="./index.html">Home</a></li>
+                                <li><a href="./agents.html">Schedule</a></li>
+                                <li><a href="./about.html">Chart</a></li>
+                                <li><a href="./contact.html">About Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Information showing page Begin -->
+    <section class="blog-hero-section set-bg" data-setbg="img/blog/bh-bg.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bh-text">
+                        <h4> {{.Branch.Moto}} :<br> Out Goal is to Minmize Traffic Hazards </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Information showing page End -->
+
+    <section class="testimonial-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h4>News </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row testimonial-slider owl-carousel">
+                
+                <div class="col-lg-6">
+                    <div class="testimonial-item">
+                        <div class="ti-text">
+                            <p>Lorem ipsum dolor amet, consectetur adipiscing elit, seiusmod tempor incididunt ut labore
+                                magna aliqua. Quis ipsum suspendisse ultrices gravida accumsan lacus vel facilisis.</p>
+                        </div>
+                        <div class="ti-author">
+                            <div class="ta-pic">
+                                <img src="img/testimonial-author/ta-1.jpg" alt=" the admin Information ">
+                            </div>
+                            <div class="ta-text">
+                                <h5>Information Title</h5>
+                                <span>Admin Fullname </span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+
+    <!--Services Section Showing the Services the Company Gives -->
+
+    <div class="container" style="padding: 20px; margin-top: 20px;" >
+        <div class="section-title">
+            <h4>Services </h4>
+        </div>
+    </div>
+
+    <div class="container as-slider owl-carousel">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="as-item">
+                    <div class="as-pic">
+                        <img src="img/agents/agent-3.jpg" alt="">
+                        <!-- <div class="rating-point">
+                            4.5
+                        </div> -->
+                    </div>
+                    <div class="as-text">
+                        <div class="at-title">
+                            <h6>  Driving Training With Skiled Driver </h6>
+                            
+                        </div>
+                        <ul>
+                            <li><strong> Better Driving Teaching teachniquest With A Lot of Resources </strong></li>
+                            <li><strong> With Skiled Field and Conceptual Teachers  </strong></li>
+                            <li><strong > Having Different Brachs in Different Countries </strong></li>
+                        </ul>
+                        <!-- <a href="#" class="primary-btn">View profile</a> -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="as-item">
+                    <div class="as-pic">
+                        <img src="img/agents/agent-4.jpg" alt="">
+                        
+                    </div>
+                    <div class="as-text">
+                        <div class="at-title">
+                            <h6> A Lot of Resources </h6>
+                            
+                        </div>
+                        <ul>
+                            <li><strong> With Our Online Learning Platform You Can Study wherever You Are  </strong></li>
+                            <li><strong> The Video Streaming and Reading Books Library </strong></span></li>
+                            <li><ins > Only For Registered Students </ins></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="as-item">
+                    <div class="as-pic">
+                        <img src="img/agents/agent-5.jpg" alt="">
+                    </div>
+                    <div class="as-text">
+                        <div class="at-title">
+                            <h6>Digital Self Testing Exams</h6>
+                        </div>
+                        <ul>
+                            <li>Our Students Can Prepare them Self for the test </li>
+                            <li><i><strong>by using the Questions in Our site  </strong></i></li>
+                            <li><ins> Only For Registered Students </ins></li>
+                            <li><strong><i> Come And Register we Can Make You well Prepared Driver </i></strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!--Services Section Showing the Services the Company Gives END -->
+
+
+    <!-- Each Branch Will Have Their Specific Categries List  -->
+    <div class="container" style=" margin-top: 4px;">
+        <div class="section-title">
+            <h4 >   Branch Number 1 :  Categories </h4>
+        </div>
+    </div>
+
+    <div class="property-comparison-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 p-0">
+                    <div class="pc-table">
+                        <table style="text-align: center;">
+                            <thead class="container">
+                                <tr>
+                                    <th class="compare-item middle-item">
+                                        <div class="title">Category </div>
+                                    </th>
+                                    <th class="compare-item right-item">
+                                        <div class="title">Rounds </div>
+                                    </th>
+                                    <th class="compare-item right-item">
+                                        <div class="title">Number of Students </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p-type">Bajaj </td>
+                                    <td>10</td>
+                                    <td>400</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-type">motor </td>
+                                    <td>14</td>
+                                    <td> 600</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Each Branchs Category End -->
+    <!--  Branches End  -->
+
+
+    <!-- Categories Listing END -->
+
+
+    <!--  Branches Begining  -->
+    <div class="container" style=" margin-top: 4px;" >
+        <div class="section-title">
+            <h4>Branches </h4>
+        </div>
+    </div>
+     <!-- Property Comparison Section Begin -->
+     <div class="property-comparison-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 p-0">
+                    <div class="pc-table">
+                        <table  style="text-align: center;">
+                            <thead>
+                                <tr>
+                                    <th class="compare-item middle-item">
+                                        <div class="title">Region</div>
+                                    </th>
+                                    <th class="compare-item right-item">
+                                        <div class="title">City</div>
+                                    </th>
+                                    <th class="compare-item right-item">
+                                        <div class="title">Specific Address</div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- {{.Branchs}} -->
+                                {{range .Branchs }}
+
+                                <tr>
+                                    <td class="p-type">{{.Address.Region}}</td>
+                                    <td>{{.Address.Zone}}</td>
+                                    <td>{{.Address.Woreda}}</td>
+                                </tr>
+                                {{end }}
+                                <!-- <tr>
+                                    <td class="p-type">Sidama</td>
+                                    <td>Hawassa</td>
+                                    <td> DK </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Property Comparison Section End -->
+    <!--  Branches End  -->
+
+
+    <!-- Team Section Begin -->
+        
+
+    <!-- Team Section End -->
+    <!-- Contact Section Begin -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <div class="ci-item">
+                            <div class="ci-icon">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="ci-text">
+                                <h5>Address</h5>
+                                <p>Assosa</p>
+                            </div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon">
+                                <i class="fa fa-mobile"></i>
+                            </div>
+                            <div class="ci-text">
+                                <h5>Phone</h5>
+                                <ul>
+                                    <li>+251-924974232</li>
+                                    <li>0992078204</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon">
+                                <i class="fa fa-headphones"></i>
+                            </div>
+                            <div class="ci-text">
+                                <h5>Support</h5>
+                                <p>Ssamuaeladnew@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="cs-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d735515.5813275519!2d-80.41163541934742!3d43.93644386501528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882a55bbf3de23d7%3A0x3ada5af229b47375!2sMono%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sbd!4v1583262687289!5m2!1sen!2sbd"
+                height="450" style="border:0;" allowfullscreen=""></iframe>
+        </div> -->
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fs-about">
+                        <div class="fs-logo">
+                            <a href="#">
+                                <img src="img/f-logo.png" alt="">
+                            </a>
+                        </div>
+                        <p>Shambel Vehicle Training Institute !<br><ins>WebSite Developer Samuael Adnew <br><strong>samuaeladnew@gmail.com</strong></ins></p>
+                        <div class="fs-social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-text">
+                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.richtext.min.js"></script>
+    <script src="js/image-uploader.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

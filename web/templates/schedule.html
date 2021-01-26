@@ -1,0 +1,180 @@
+<!DOCtype html>
+
+<html>
+    <head>
+        <meta charset="utf-8" >
+    <link rel="stylesheet" href="{{.Host}}css/bootstrap.min.css" type="text/css">
+    </head>
+    <body>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            th, td {
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr{
+                background-color: #f2f2f2;
+                border: #006699 solid 2px;
+                border: solid #006699 2px;
+                }
+                td{
+                    border: #000 solid 2px;
+                    text-align: center;
+                }
+                .students_list{
+                    border: solid 1px ;
+                }
+                caption {
+                    color: black;
+                    font-weight: bold;
+                    font-style: italic;
+                    box-shadow: 2px 2px 2px ;
+                }
+
+            th {
+                width: auto;
+                background-color: #006699;
+                color: white;
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+                <img  style=" text-align: center; border-radius: 50%;"  
+                      class="col-2" 
+                      src="{{.Host}}{{.Branch.Logourl }}" 
+                      alt="The Logo Of the Breanch"  
+                      >
+                <div class="col-6">
+                    <h5><strong> {{.Branch.BranchFullnameAmharic}} </strong></h5>
+                    <h5><strong> {{.Branch.BranchFullnameEnglish}} </strong></h5>
+                    <h6><strong>Branch Number : {{.Branch.ID}} </strong></h6>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h5  style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: lighter; font-style: italic;">  Schedule For <br>Category <strong> {{.Round.Category.Title }}</strong> <br>Round Number : <strong>{{.Round.Roundnumber }} </strong></h5>
+        </div>
+        <div class="container" id="courseList">
+            <caption style="float:left " > Section And List Of Students  </caption>
+            <table>
+                <tr>
+                    <th> Secton </th>
+                    <th> Room Number </th>
+                    <th> Students Full Name </th>
+                </tr>
+                {{ range  .Sections }}
+                <tr>
+                    <td><h3><strong>{{.Sectionname }}</strong></h3> </td> 
+                    <td> <h3><strong>{{.Room.Number}}</strong></h3> </td>
+                    <td>
+                        <ol>
+                            {{range .Students }}
+                            <li class="students_list">{{ .Firstname }} {{.Lastname }} {{.GrandFatherName}} </li>
+                            {{end}}
+                        </ol>
+                    </td>
+                </tr>
+                {{end}}
+            </table>
+
+            <div  style="margin-top: 30px;" class="conainer">
+                <hr>
+                <h2 style="float: center;font-weight: bold;">
+                    Lecture Classes 
+                </h2>
+            </div>
+            {{range .Sections}}
+            <hr>
+            <div   style="margin-top: 50px;" class="container  each_section_lecture">
+                <caption  style="box-shadow: 3px 3px 3px ;"> <h3>{{.Sectionname}} </h3> </caption>
+                <table> 
+                    <tr>
+                        <th> Date  </th>
+                        <th> Time  </th>
+                        <th> Course Title </th>
+                        <th>  Teacher </th>
+                        <th>  Duration </th>
+                    </tr>
+                    {{range .Lectures}}
+                    <tr>
+                        <td>
+                            <div>
+                                Date : <strong>{{.EndDate.Day}}/{{.EndDate.Month}}/{{.EndDate.Year}} 
+                                    <br>
+                                    Day : {{.EndDate.Name}}</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                Shift : <strong>{{.StartDate.SubName}}</strong>
+                                From  : <strong>{{.StartDate.Hour}} :{{.StartDate.Minute}}  </strong>
+                                To    : <strong>{{.EndDate.Hour}} :{{.EndDate.Minute}}  </strong>
+                            </div>
+                        </td>
+                        <td>
+                            {{.Course.Title}}
+                        </td>
+                        <td>
+                            {{.Teacher.Firstname}} {{.Teacher.Lastname}} {{.Teacher.GrandName}}
+                            <br>
+                            {{.Teacher.Username}}
+                        </td>
+                        <td>
+                            {{.Duration}}
+                        </td>
+                        </tr>
+                    {{end}}
+                </table>
+            </div>
+        {{end}}
+        {{range .Sections}}
+            <div style="margin: 10px;" class="container  each_section_lecture">
+                <caption  style="box-shadow: 3px 3px 3px ;"> <h3>{{.Sectionname}} Trainings </h3> </caption>
+                <table>
+                    <tr>
+                        <th> Date  </th>
+                        <th> Time  </th>
+                        <th>   Trainer  </th>
+                        <th>  Students </th>
+                    </tr>
+                    {{range .Trainings}}
+                    <tr>
+                        <td>
+                            <div>
+                                Date : <strong>{{.StartDate.Day}}/{{.StartDate.Month}}/{{.EndDate.Year}} 
+                                    <br>
+                                    Day : {{.StartDate.Name}}</strong>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                Shift : <strong>{{.StartDate.SubName}}</strong><br>
+                                From  : <strong>{{.StartDate.Hour}} :{{.StartDate.Minute}}  </strong><br>
+                                To    : <strong>{{.EndDate.Hour}} :{{.EndDate.Minute}}  </strong>
+                            </div>
+                        </td>
+                        <td>
+                           Fullname : <strong> {{.Trainer.Firstname }} {{.Trainer.Lastname }} {{.Trainer.GrandName }}</strong>
+                           <br><br>
+                           Username : <strong>{{.Trainer.Username}}</strong>
+                           <br>
+                           Vehicle Board Number : <strong>{{ .Trainer.Vehicle.BoardNumber }}</strong>
+                        </td>
+                        <td>
+                            <ol  style="border : #006699 none 0px;"> 
+                                {{range .Students }}
+                                    <li style="border : #006699 none 0px;"   class="students_list">{{ .Firstname }} {{.Lastname }} {{.GrandFatherName }} </li>
+                                {{end}}    
+                            </ol>
+                        </td>
+                        </tr>
+                    {{end}}
+                </table>
+            </div>
+        {{end}}
+    </body>
+</html>

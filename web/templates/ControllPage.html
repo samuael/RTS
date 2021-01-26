@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Aler Template">
+    <meta name="keywords" content="Aler, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{{.Host}}css/bootstrap.min.css" type="text/css">
+   <link rel="stylesheet" href="{{.Host}}css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="{{.Host}}css/style.css" type="text/css">
+</head>
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+    <!-- Offcanvas Menu Wrapper Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="canvas-close">
+            <span class="far fa-window-close"></span> 
+        </div>
+        <div class="logo">
+            <a href="./index.html">
+                <img src="{{.Host}}img/p1.png" alt="">
+            </a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="om-widget">
+            <ul>
+                <li><i class="fas fa-code-branch"></i>{{.Branch.Name}}</li>
+                <li>
+                    <a href="/"><img src="{{.Host}}{{.Admin.Imageurl}}" class="rounded-circle " style="width: 60px; height: 60px;"><br> <p>
+                        {{.Admin.Username}}
+                    </p></a>
+                  </li>
+            
+            </ul>
+            <a href="{{.Host}}/logout/" class="hw-btn">logout</a>
+        </div>
+    </div>
+    <!-- Offcanvas Menu Wrapper End -->
+
+    <!-- Header Section Begin -->
+    
+    <header class="header-section">
+        <div class="hs-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2">
+                        <div class="logo">
+                            <a href="./index.html"><img src="{{.Host}}{{.Branch.Logourl}}" alt="The Logo Of " > </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10">
+                        <div class="ht-widget">
+                            <ul>
+                               
+                                <li><i class="fas fa-code-branch"></i>Branch No: {{.Branch.Name}}</li>
+                                <li>
+                                    <a href="/"><img src="{{.Host}}{{.Admin.Imageurl}}" class="rounded-circle " style="width: 60px; height: 60px;"><br> <p class="text-center">
+                                        <h3><strong>{{.Admin.Username}}</strong></h3>
+                                    </p></a>
+                                  </li>
+                            </ul>
+                            <a href="{{.Host}}logoout/" class="hw-btn">logout</a>
+                    
+                        </div>
+                    </div>
+                </div>
+                <div class="canvas-open">
+                    <span class="fas fa-bars"></span>
+                </div>
+            </div>
+        </div>
+        <div class="hs-nav" style="background-color: #003679;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <nav class="nav-menu"> 
+                            <ul>
+                                <li><a  href="./index.html " class="fas fa-caret-down">Categories <a></a></a>
+                                    <ul class="dropdown">
+                                        <li><a href="./property.html">Students</a></li>
+                                        <li><a href="./profile.html">Admins</a></li>
+                                        <li><a href="./property-details.html">Teachers</a></li>
+                                        <li><a href="./property-comparison.html">Field mans</a></li>
+                                        <li><a href="./property-submit.html">Vichles</a></li>
+                                        <li><a href="./property-submit.html">Rounds</a></li>
+                                        <li><a href="./property-submit.html">Learning Resource</a></li>
+                                        <li><a href="./property-submit.html">Break date configration</a></li>
+                                        <li><a href="./property-submit.html">Information site</a></li>
+
+                                    </ul>
+                                
+                                
+                                
+                                </li>
+                                <li class="active"><a href="#">Controle</a>
+                                    
+                                </li>
+                                <li ><a href="./Registration.html">Registration</a></li>
+                                <li><a href="./about.html">Payments</a></li>
+                                <li><a href="./blog.html">Learning</a></li>
+                                <li><a href="./contact.html">Q and A</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr/>
+<!-- click from the cards motor , taxi.. -->
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            <div class="section-title">
+                <h4> Training Categories</h4>
+            </div>
+        </div>
+    </div>
+    <!-- Add New Categories section -->
+<hr>
+    <div class="container">
+        <div class="row">
+            
+                <div class="col-md-12  mt-5" >
+                    <div class="choose text-center">
+                       <!-- <h1>you can choose one from this</h1>
+                        <p>then you will have details of them</p>
+    -->
+                        <div class="cards py-5">
+                            <div class="d-flex flex-row justify-content-center flex-wrap">
+    
+                                {{ range .Categories}}
+                             <div class="card mr-4 d-inline-block shadow-lg " id="cardone">
+                                
+                                 <div class="card-body" width="200" height=200 style="padding: 20px; margin: 50px;">
+                                     <h3 >{{.Title}}</h3>
+                                 </div>
+                             </div>
+                             {{end}}
+                             <!-- <div class="card  mr-4 d-inline-block shadow-lg" id="cardone">
+                                <div class="card-img-top">
+                                    <img src="{{.Host}}img/taxi.jpg" class="img-fluid" style="width: 200px;height: 150px;">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="px-3 py-3" >Taxi</h3>
+                                </div>
+                            </div>
+                            <div class="card mr-4 d-inline-block shadow-lg" id="cardone">
+                                <div class="card-img-top">
+                                    <img src="{{.Host}}img/motor.jpg" class="img-fluid" style="width: 200px;height: 150px;">
+                                </div>
+                                <div class="card-body">
+                                    <h3>Motor</h3>
+                                </div>
+                            </div> -->
+                            </div>
+                            <button  onclick="addNewCategory()"  type="submit" class="link_button features_button"><a href="#">Add new Category</a></button>
+                        </div>
+                        </div>
+                      </div>
+  </div>
+  <script>
+    function addNewCategory() {
+        console.log("addAdmin Function");
+        var element = document.getElementById("addnewCategory");
+        if (element.style.display == "none") {
+            element.setAttribute("style", "display:block");
+        } else {
+            element.setAttribute("style", "display:none");
+        }
+    }
+</script>
+
+ </div>
+
+ <div class="container" id="addnewCategory" style="display: none;" >
+    <div class="row">
+        
+            
+            <div class="md-form form-lg">
+                <input type="text" id="inputLGEx" class="form-control form-control-lg" placeholder="category name">
+               
+              </div>
+              <div class="md-form form-lg">
+                <button type="button" id="inputLGEx" class="form-control form-control-lg" style="background-color: #003679; color: white;">Add</button>
+               
+              </div>
+             
+        
+    </div>
+</div>
+
+ 
+<hr>
+    <div class="row">
+        <div class="col-lg-8 col-md-8">
+            <div  class="section-title">
+                <h4>Rooms</h4>
+            </div>
+        </div>
+    </div>
+    <hr>
+ <div class="container">
+    <div class="container table-responsive py-3"  >
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <!-- <th>Number</th> -->
+              <th>Room Number</th>
+              <th>Capacity</th>
+              <th>Created By</th>
+            </tr>
+          </thead>
+          <tbody>
+              {{range .Rooms}}
+            <tr>
+              
+              <td>{{.Number}}</td>
+              <td>{{.Capacity}}</td>
+            <td>{{.CreatedBy}}</td>
+          
+              <td><a href="#"><i class="fas fa-pen-alt"></i> </a></td>
+              <td><a href="#"><i class="fas fa-trash"></i></a></td>
+            </tr>
+            {{end}}
+          </tbody>
+        </table>
+        </div>
+
+
+ </div>
+ <!--add rooms mnamn section-->
+ 
+ <hr>
+ <div class="row">
+     <div class="col-lg-8 col-md-8">
+         <div  class="section-title">
+             <h4>Add Rooms</h4>
+         </div>
+     </div>
+ </div>
+ <hr>
+<div class="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 features_col">
+                <div class="features_content">
+                    <div class="section_title_container">
+                        <div class="section_subtitle">take a look at our</div>
+                        <div class="section_title">Why you need to fill this info?</div>
+                        <div class="section_text">
+                            <p>Morbi ut dapibus dui. Sed ut iaculis elit, quis varius mauris. Integer ut ultricies orci, lobortis egestas sem. Morbi ut dapibus dui. Sed ut iaculis elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ultricies pellentesque mauris a elementum. Cras eu ornare turpis. Morbi id maximus lorem. Duis leo sapien, accumsan ves tibulum massa sit amet, sollicitudin euismod libero. Aliquam mollis ipsum eget nulla pulvinar, a fringilla urna consectetur.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <form>
+                    <div class="form-group">
+                      <label for="room">Room Number</label>
+                      <input type="number" class="form-control" id="room" aria-describedby="emailHelp" placeholder="enter room number">
+                      
+                    </div>
+                    <div class="form-group">
+                      <label for="Capacity">Capacity</label>
+                      <input type="number" class="form-control" id="Capacity" placeholder="enter Capacity">
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <button type="submit" class="link_button features_button"><a href="#">submit</a></button>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Footer Section Begin -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="fs-about">
+                        <div class="fs-logo">
+                            <a href="#">
+                                <img src="{{.Host}}img/logo.png" alt="" style="width: 100px; height: 100px;">
+                            </a>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua ut aliquip ex ea</p>
+                        <div class="fs-social">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-telegram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Help</h5>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                            <li><a href="#">Knowledgebase</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="fs-widget">
+                        <h5>Links</h5>
+                        <ul>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Create Property</a></li>
+                            <li><a href="#">My Properties</a></li>
+                            <li><a href="#">Register</a></li>
+                            <li><a href="#">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="fs-widget">
+                        <h5>Newsletter</h5>
+                        <p>Deserunt mollit anim id est laborum.</p>
+                        <form action="#" class="subscribe-form">
+                            <input type="text" placeholder="Email">
+                            <button type="submit" class="site-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+     
+    </footer>
+
+    
+    <!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{{.Host}}js/jquery-3.3.1.min.js"></script>
+    <script src="{{.Host}}js/bootstrap.min.js"></script>
+    <script src="{{.Host}}js/jquery.magnific-popup.min.js"></script>
+    <script src="{{.Host}}js/mixitup.min.js"></script>
+    <script src="{{.Host}}js/jquery-ui.min.js"></script>
+    <script src="{{.Host}}js/jquery.nice-select.min.js"></script>
+    <script src="{{.Host}}js/jquery.slicknav.js"></script>
+    <script src="{{.Host}}js/owl.carousel.min.js"></script>
+    <script src="{{.Host}}js/jquery.richtext.min.js"></script>
+    <script src="{{.Host}}js/image-uploader.min.js"></script>
+    <script src="{{.Host}}js/main.js"></script>
+</body>
+
+</html>

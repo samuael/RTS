@@ -1,0 +1,45 @@
+{{ define "Payment_report_content"}}
+<div class="container">
+    <hr>
+    <div>  Secretaries Payment History .  </div>
+    {{range $admin , $value := .SecretaryToPaidAmount }}
+    <div class="row">
+        <div class="col-8" >
+          <strong>{{$admin.Firstname }} {{$admin.Lastname }} </strong><br>
+          <strong>{{$admin.Username }}</strong><br>
+        </div>
+        <div class="col-4">
+            <strong>
+               {{ $value }} 
+            </strong>
+        </div>
+    </div>
+    {{end}}
+    <hr>
+    <h4><strong>Rounds Payment History </strong></h4>
+    {{range $round  , $value :=  .RoundToPaidAmount }}
+    <div class="row">
+        <div class="col-8">
+            <strong> Round No {{ $round.Roundnumber }}</strong><br>
+            <small>{{$round.Category.Title }} </small><br>
+        </div>
+        <div class="col-4">
+            <strong>Amount : {{$value}} </strong>
+        </div>
+    </div>
+    {{end}}
+    <hr>
+    <h4><strong>Category Payment History </strong></h4>
+    {{range $category  , $value :=  .CategoryToPaidAmount }}
+    <div class="row">
+        <div class="col-8">
+            <strong> {{$category.Title }}</strong>
+        </div>
+        <div class="col-4">
+            <strong>Amount : {{$value}} </strong>
+        </div>
+    </div>
+    {{end}}
+    <hr>
+</div>
+{{end}}
